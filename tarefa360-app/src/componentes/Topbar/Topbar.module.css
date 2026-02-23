@@ -29,10 +29,9 @@
     border: none;
     color: rgb(0, 0, 0);
     font-size: 3.5vh;
+
+    margin-right: 20px;
    
     display: flex;
     align-items: center;
-}
-.teste{
-    
 }
