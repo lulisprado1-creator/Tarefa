@@ -97,3 +97,5 @@ const UsuarioApi = {
         }
     }
 }
+
+export default UsuarioApi;
