@@ -20,12 +20,13 @@ const UsuarioApi = {
         }
 
     },
-    async criarAsync(nome, email, senha) {
+    async criarAsync(nome, email, senha, tipoUsuario) {
         try {
             const usuarioCriar = {
                 Nome: nome,
                 Email: email,
-                Senha: senha
+                Senha: senha,
+                TipoUsuario: tipoUsuario  
             };
             const response = await HTTPClient.post(`/Usuario/Criar`, usuarioCriar);
             return response.data;
@@ -35,20 +36,22 @@ const UsuarioApi = {
         }
 
     },
-    async atualizarAsync(usuarioId, nome, email) {
-        try {
-            const usuarioAtualizar = {
-                Id: usuarioId,
-                Nome: nome,
-                Email: email
-            };
-            const response = await HTTPClient.put(`/Usuario/Atualizar`, usuarioAtualizar);
-            return response.data;
-        } catch (error) {
-            console.error("Erro ao atualizar usuário:", error);
-            throw error;
-        }
-    },
+    async atualizarAsync(usuarioId, nome, email, tipoUsuarioId) {
+    try {
+        const usuarioAtualizar = {
+            UserId: usuarioId,     // antes estava "Id"
+            Nome: nome,
+            Email: email,
+            TipoId: tipoUsuarioId  // antes estava "TipoUsuarioId"
+        };
+
+        const response = await HTTPClient.put(`/Usuario/Atualizar`, usuarioAtualizar);
+        return response.data;
+    } catch (error) {
+        console.error("Erro ao atualizar usuário:", error);
+        throw error;
+    }
+},
 
     async deletarAsync(usuarioId) {
         try {
