@@ -15,7 +15,7 @@ export function Usuarios() {
 
     async function carregarUsuarios() {
         try {
-            const listaUsuarios = await UsuarioApi.listarAsync();
+            const listaUsuarios = await UsuarioApi.ListarAsync(true);
             setUsuarios(listaUsuarios);
 
         } catch (error) {
@@ -34,7 +34,7 @@ export function Usuarios() {
                 <div className={styles.pagina_conteudo}>
                     <div className={styles.pagina_cabecalho}>
                         <h3>Usuários</h3>
-                        <Link to="/usuarios/novo" className={styles.botao_novo_usuario}>Novo Usuário</Link>
+                        <Link to="/usuario/novo" className={styles.botao_novo_usuario}>Novo Usuário</Link>
                     </div>
 
                     <div classname={styles.tabela}>
