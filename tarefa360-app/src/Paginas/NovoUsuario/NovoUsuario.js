@@ -48,7 +48,7 @@ export function NovoUsuario() {
                 Nome: nome,
                 Email: email,
                 Senha: senha,
-                TipoUsuario: tipoUsuario
+                tipo: tipoUsuario
             });
 
 
@@ -108,7 +108,7 @@ export function NovoUsuario() {
                             <Form.Control
                                 as="select"
                                 value={tipoUsuario}
-                                onChange={(e) => setTipoUsuario(Number(e.target.value))}
+                                onChange={(e) => setTipoUsuario(e.target.value)}
                             >
                                 <option value="">Selecione o tipo de usuário</option>
                                 {TiposUsuarios.map(tipo => (
