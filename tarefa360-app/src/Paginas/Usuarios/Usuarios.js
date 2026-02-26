@@ -41,6 +41,7 @@ export function Usuarios() {
                         <Table responsive>
                             <thead className={styles.tabela_cabecalho}>
                                 <tr>
+                                    <th>Id</th>
                                     <th>Nome</th>
                                     <th>Email</th>
                                     <th>Ações</th>
@@ -50,15 +51,20 @@ export function Usuarios() {
                             </thead>
                             <tbody className={styles.tabela_corpo}>
                                 {usuarios.map((usuario) => (
-                                    <tr key={usuario.id}>
+                                                               
+                                        <tr key={usuario.userId}>
+                                        <td>{usuario.userId}</td>
                                         <td>{usuario.nome}</td>
                                         <td>{usuario.email}</td>
+                                        
                                         <td>
-                                            <Link to='/usuario/editar' state={usuario.id} className={styles.botao_editar}>
+                                            
+                                            
+                                            <Link to='/usuario/editar' state={usuario.userId} className={styles.botao_editar}>
                                                 <MdEdit />
 
                                             </Link>
-                                            <Link to='/usuario/deletar' state={usuario.id} className={styles.botao_deletar}>
+                                            <Link to='/usuario/deletar' state={usuario.userId} className={styles.botao_deletar}>
                                                 <MdDelete />
                                             </Link>
 

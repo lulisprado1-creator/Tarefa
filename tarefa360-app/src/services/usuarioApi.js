@@ -23,10 +23,10 @@ const UsuarioApi = {
     async criarAsync(nome, email, senha, tipoUsuario) {
         try {
             const usuarioCriar = {
-                Nome: nome,
-                Email: email,
-                Senha: senha,
-                TipoUsuario: tipoUsuario  
+                nome: nome,
+                email: email,
+                senha: senha,
+                tipo: Number(tipoUsuario)
             };
             const response = await HTTPClient.post(`/Usuario/Criar`, usuarioCriar);
             return response.data;
@@ -37,21 +37,28 @@ const UsuarioApi = {
 
     },
     async atualizarAsync(usuarioId, nome, email, tipoUsuarioId) {
-    try {
-        const usuarioAtualizar = {
-            UserId: usuarioId,     // antes estava "Id"
-            Nome: nome,
-            Email: email,
-            TipoId: tipoUsuarioId  // antes estava "TipoUsuarioId"
-        };
+        try {
+            const usuarioAtualizar = {
+                userId: usuarioId,     // antes estava "Id"
+                nome: nome,
+                email: email,
+                tipo: Number(tipoUsuarioId)// antes estava "TipoUsuarioId"
+            };
 
-        const response = await HTTPClient.put(`/Usuario/Atualizar`, usuarioAtualizar);
-        return response.data;
-    } catch (error) {
-        console.error("Erro ao atualizar usuário:", error);
-        throw error;
-    }
-},
+            console.log("Enviando usuário:", {
+                userId: usuarioId,
+                Nome: nome,
+                Email: email,
+                tipo: Number(tipoUsuarioId)
+            });
+
+            const response = await HTTPClient.put(`/Usuario/Atualizar`, usuarioAtualizar);
+            return response.data;
+        } catch (error) {
+            console.error("Erro ao atualizar usuário:", error);
+            throw error;
+        }
+    },
 
     async deletarAsync(usuarioId) {
         try {
