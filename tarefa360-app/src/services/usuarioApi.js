@@ -60,10 +60,14 @@ const UsuarioApi = {
         }
     },
 
-    async deletarAsync(usuarioId) {
+    async deletarAsync(userId) {
         try {
-            const response = await HTTPClient.delete(`/Usuario/Deletar/${usuarioId}`);
+            const response = await HTTPClient.delete(`/Usuario/Deletar/${userId}`);
+            console.log("o usuario ", {userId}, "foi deletado")
             return response.data;
+
+            console.log()
+        
         } catch (error) {
             console.error("Erro ao deletar usuário:", error);
             throw error;
