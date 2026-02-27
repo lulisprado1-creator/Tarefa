@@ -1,43 +1,43 @@
 .pagina_conteudo {
     width: 100%;
     height: 100%;
-    
-    
+
+
     padding: 50px;
-    
+
 }
 
-.tabela{
+.tabela {
     margin-top: 30px;
 }
 
-.tabela_corpo svg{
+.tabela_corpo svg {
     color: rgb(29, 22, 11);
 
-    margin:5px;
+    margin: 5px;
     font-size: 25px;
 }
 
-.botao_editar svg:hover{
+.botao_editar svg:hover {
     color: rgb(228, 110, 32);
 
 }
 
-.botao_deletar{
+.botao_deletar {
     border: none;
     background: none;
 
-    & svg:hover{
+    & svg:hover {
         color: red;
     }
 }
 
-.pagina_cabecalho{
+.pagina_cabecalho {
     display: flex;
     justify-content: space-between;
-    
 
-    &botao_novo{
+
+    &botao_novo {
         text-decoration: none;
 
         color: azure;
@@ -48,6 +48,17 @@
 
         border-radius: 10px;
         background-color: rgb(15, 15, 15);
+    }
+
+}
+
+.botao_novo_usuario {
+
+    font-size: 150%;
+    color: goldenrod;
+
+    & svg:hover{
+        color: blue
     }
 
 }
