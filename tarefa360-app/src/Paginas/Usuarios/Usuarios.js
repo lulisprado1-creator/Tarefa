@@ -124,7 +124,7 @@ export function Usuarios() {
                                 Cancelar
                             </Button>
                             <Button variant="danger" onClick={handleDeletar}>
-                                Deletar
+                                Deletar!!
                             </Button>
                         </Modal.Footer>
 
